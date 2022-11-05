@@ -1,0 +1,20 @@
+Fortran里调企业版reg.dll取硬盘序列号示例 by 袁梦涛
+
+      CHARACTER*30 diskid
+      INTEGER ndisk
+
+      INTERFACE
+        INTEGER FUNCTION GetHardDiskId
+ (diskid,ndisk)
+        !DEC$ ATTRIBUTES DLLIMPORT, STDCALL,
+     $ALIAS:"_GetHardDiskId@8" :: GetHardDiskId
+        CHARACTER diskid*30
+        !DEC$ ATTRIBUTES REFERENCE :: diskid
+        INTEGER(4) ndisk
+        END FUNCTION GetHardDiskId
+      END INTERFACE
+
+      reslt = GetHardDiskId(diskid,ndisk)
+
+命令行编译方式：ifort example.f reg.lib
+
