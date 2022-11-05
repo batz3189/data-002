@@ -1,0 +1,48 @@
+//+--------------------------------------------------------------------------
+//                                                                              
+//     reg.h ---- 共享软件加密算法库专业版
+//     Copyright (c) 2002-2006 liangs Studio, All rights reserved
+//     Created 2006/5/29 by liangs
+//     Version: 3.7 Final
+//     Homepage: http://liangs99.yeah.net
+//     Email: regdll@tom.com
+//
+//---------------------------------------------------------------------------+
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* basic export function define */
+
+BOOL WINAPI GetHardDiskId(LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI GetMainBoardId(LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI GetMACAddress(LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI BlowFishEncrypt(LPCTSTR lpInBuffer, LPCTSTR lpKey, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI BlowFishDecrypt(LPCTSTR lpInBuffer, LPCTSTR lpKey, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI MD5Encrypt(LPTSTR lpInBuffer,LPTSTR lpOutBuffer, int length, LPCTSTR lpRegisterCode);
+BOOL WINAPI SHAEncrypt(LPTSTR lpInBuffer,LPTSTR lpOutBuffer, int length, LPCTSTR lpRegisterCode);
+BOOL WINAPI Secret16Encrypt(LPCTSTR lpInBuffer, LPCTSTR lpKey, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI CRCFileCheck(LPCTSTR FileNameStr, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI EncryptStringFun1(LPCTSTR lpInBuffer, LPCTSTR lpKey, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI DecryptStringFun1(LPCTSTR lpInBuffer, LPCTSTR lpKey, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI EncryptStringFun2(LPCTSTR lpInBuffer, LPCTSTR lpKey, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI DecryptStringFun2(LPCTSTR lpInBuffer, LPCTSTR lpKey, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI FileEncrypt(LPCTSTR lpInputFileName, LPCTSTR lpOutputFileName, LPCTSTR lpKey, LPCTSTR lpRegisterCode);
+BOOL WINAPI FileDecrypt(LPCTSTR lpInputFileName, LPCTSTR lpOutputFileName, LPCTSTR lpKey, LPCTSTR lpRegisterCode);
+BOOL WINAPI RSAEncrypt(LPCTSTR lpInBuffer, LPCTSTR D_String, LPCTSTR N_String, int Mode, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI RSADecrypt(LPCTSTR lpInBuffer, LPCTSTR N_String, int Mode, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI Base64Encode(LPCTSTR lpInBuffer, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI Base64Decode(LPCTSTR lpInBuffer, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI CRC32(LPTSTR lpInBuffer, int length, LPTSTR lpOutBuffer, LPCTSTR lpRegisterCode);
+BOOL WINAPI DesEncrypt(LPCTSTR lpInBuffer,LPTSTR lpOutBuffer, LPCTSTR lpKey, LPCTSTR lpRegisterCode);
+BOOL WINAPI DesDecrypt(LPCTSTR lpInBuffer,LPTSTR lpOutBuffer, LPCTSTR lpKey, LPCTSTR lpRegisterCode);
+BOOL WINAPI CharToHex(LPCTSTR lpInBuffer,LPTSTR lpOutBuffer);
+BOOL WINAPI HexToChar(LPCTSTR lpInBuffer,LPTSTR lpOutBuffer);
+BOOL WINAPI GetDllVersion(LPTSTR lpOutBuffer);
+
+#ifdef __cplusplus
+}
+#endif
+
